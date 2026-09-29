@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUNA — Handmade Bags & Leather Goods</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">Handcrafted Leather & Linen Bags · Small Batch Release</div>
+
+  <nav>
+    <a class="logo" href="/">LUNA</a>
+    <div class="navlinks">
+      <a href="#shop">Shop</a>
+      <a href="/bags" style="font-weight:700;color:var(--accent);">Handmade Bags 👜</a>
+      <a href="#story">Our Story</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+    <button class="cart-btn" id="cartButton">Bag <span class="count" id="count">0</span></button>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Made slowly. Carried daily.</div>
+        <h1>Little things,<br>made lovely.</h1>
+        <p>Thoughtfully handcrafted leather and canvas bags designed to bring artisan warmth to your everyday style.</p>
+        <div class="buttons">
+          <a class="btn btn-dark" href="/bags">Explore Bags Collection 👜</a>
+          <a class="btn btn-light" href="#story">Meet LUNA</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="artisan_woman.png" alt="Handmade Crafting by LUNA Artisan">
+        <div class="floating-note"><strong>Handmade</strong>one piece at a time ♡</div>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=85" alt="Handmade textile detail">
+      </div>
+      <div>
+        <div class="eyebrow">The LUNA way</div>
+        <h2>Made by hand.<br>Made to last.</h2>
+        <p>LUNA started with a simple idea: the things we carry every day deserve to be beautiful, comfortable, and made with genuine care.</p>
+        <div class="checks">
+          <div>✓ Small-batch handmade</div>
+          <div>✓ Thoughtful materials</div>
+          <div>✓ Easy everyday colors</div>
+          <div>✓ Packed with care</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote" id="journal">
+      <mark>A little note from LUNA</mark>
+      <h2>“You don't need a special occasion to wear something special.”</h2>
+      <p>Slow mornings, messy buns, coffee runs, date nights — LUNA is made for all of them.</p>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+      <div class="section-head">
+        <h2>Customer Stories</h2>
+        <p>Loved by daily bun wearers and silk enthusiasts everywhere.</p>
+      </div>
+      <div class="reviews-grid" id="reviewsGrid">
+        <p>Loading community reviews...</p>
+      </div>
+    </section>
+
+    <div class="newsletter">
+      <div>
+        <h2>Stay in the loop.</h2>
+        <p>New drops, behind-the-scenes, and little LUNA notes.</p>
+      </div>
+      <form class="form" id="newsletterForm">
+        <input id="email" type="email" placeholder="Your email address" required>
+        <button>Join →</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <strong>LUNA</strong>
+    <div>Handmade with intention · © 2026 LUNA</div>
+    <div>Instagram · TikTok · Contact</div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Product Detail Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">×</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <aside class="cart-panel" id="cart">
+    <div class="cart-top">
+      <h3>Your bag</h3>
+      <button class="close" id="closeCart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-bottom">
+      <div class="total"><span>Total</span><span id="total">$0</span></div>
+      <button class="checkout" id="checkout">Checkout</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
