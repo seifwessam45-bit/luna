@@ -1,0 +1,362 @@
+/* ─── LUNA Design System ─── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8882E;
+  --gold-light:#D4A84B;
+  --gold-pale:#F5EDD8;
+  --gold-glow:rgba(184,136,46,.18);
+  --ink:#1E1812;
+  --ink-soft:#3D3228;
+  --muted:#857568;
+  --cream:#FAF7F2;
+  --warm-white:#FFFDF9;
+  --sand:#F0E9DA;
+  --line:#E8DFD0;
+  --shadow:0 18px 55px rgba(30,24,18,.09);
+  --shadow-gold:0 12px 40px rgba(184,136,46,.22);
+}
+html{scroll-behavior:smooth}
+body{font-family:"Outfit",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+a{text-decoration:none;color:inherit}
+button{font:inherit;border:0;cursor:pointer}
+img{width:100%;display:block;object-fit:cover}
+
+/* Announcement bar */
+.announcement{
+  background:var(--ink);
+  color:var(--gold-light);
+  text-align:center;
+  padding:10px;
+  font-size:11.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:500;
+}
+
+/* Navigation */
+nav{
+  height:80px;
+  background:rgba(250,247,242,.95);
+  backdrop-filter:blur(14px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;
+  position:sticky;top:0;z-index:20;
+  border-bottom:1px solid var(--line);
+  transition:box-shadow .3s;
+}
+nav:hover{box-shadow:0 4px 24px rgba(30,24,18,.06)}
+.logo-img{height:42px;width:auto;display:block;transition:opacity .2s}
+.logo-img:hover{opacity:.82}
+.navlinks{display:flex;gap:34px;font-size:13.5px;font-weight:500;letter-spacing:.01em}
+.navlinks a{color:var(--ink-soft);transition:color .2s}
+.navlinks a:hover,.navlinks a.active{color:var(--gold)}
+.cart-btn{
+  background:var(--ink);
+  color:#fff;
+  border-radius:999px;
+  padding:9px 20px;
+  font-size:13px;
+  font-weight:600;
+  position:relative;
+  letter-spacing:.03em;
+  transition:background .25s,transform .2s;
+}
+.cart-btn:hover{background:var(--gold);transform:translateY(-1px)}
+.count{
+  position:absolute;top:-8px;right:-8px;
+  background:var(--gold);color:#fff;
+  width:20px;height:20px;border-radius:50%;
+  font-size:10px;display:grid;place-items:center;
+  font-weight:700;
+}
+
+/* Eyebrow label */
+.eyebrow{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:700;margin-bottom:14px;
+}
+
+/* Hero */
+.hero{
+  min-height:660px;display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;padding:80px 6%;gap:60px;
+}
+h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(54px,7.5vw,98px);
+  line-height:.95;font-weight:600;
+  letter-spacing:-.03em;
+  color:var(--ink);
+}
+.hero p{max-width:520px;color:var(--muted);font-size:16.5px;margin:26px 0 32px;line-height:1.65}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 26px;border-radius:999px;font-weight:600;font-size:13.5px;transition:.25s;letter-spacing:.02em}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:var(--shadow-gold)}
+.btn-light{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.1)}
+.btn-gold:hover{background:var(--gold-light);box-shadow:0 12px 32px rgba(184,136,46,.35)}
+
+.hero-art{
+  height:520px;
+  border-radius:280px 280px 28px 28px;
+  overflow:hidden;position:relative;
+  background:var(--gold-pale);
+  box-shadow:var(--shadow-gold);
+}
+.hero-art img{height:100%}
+.floating-note{
+  position:absolute;bottom:24px;left:24px;
+  background:rgba(255,253,249,.93);
+  padding:14px 20px;border-radius:18px;
+  font-size:13px;box-shadow:var(--shadow);
+  border:1px solid var(--line);
+}
+.floating-note strong{
+  display:block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:20px;font-weight:600;color:var(--gold);
+}
+
+/* Sections */
+section{padding:100px 6%}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:38px;gap:20px}
+.section-head h2,.newsletter h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:48px;font-weight:600;line-height:1.02;
+  color:var(--ink);
+}
+.section-head p{color:var(--muted);max-width:430px;font-size:14px}
+
+/* Product cards */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product-card{
+  background:var(--warm-white);
+  border-radius:20px;overflow:hidden;
+  border:1px solid var(--line);
+  transition:.28s ease;cursor:pointer;
+}
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-gold);border-color:rgba(184,136,46,.3)}
+.product-img{aspect-ratio:1;background:var(--sand);position:relative}
+.product-img img{height:100%}
+.tag{
+  position:absolute;margin:12px;
+  background:var(--gold);color:#fff;
+  padding:5px 12px;border-radius:999px;
+  font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;z-index:1;
+}
+.product-info{padding:18px}
+.product-info h3{font-size:15px;font-weight:600;color:var(--ink)}
+.product-info p{font-size:12.5px;color:var(--muted);margin-top:3px}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+.price{font-weight:700;color:var(--gold);font-size:16px}
+.add{
+  background:var(--ink);color:#fff;
+  border-radius:50%;width:38px;height:38px;font-size:22px;
+  transition:.2s;
+}
+.add:hover{background:var(--gold)}
+
+/* Story section */
+.story{
+  background:var(--gold-pale);
+  display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;
+  border-radius:32px;margin:0 0 0 0;
+}
+.story-img{height:570px;border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.story-img img{height:100%}
+.story h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:56px;font-weight:600;line-height:1.02;margin-bottom:22px;
+}
+.story p{color:var(--ink-soft);max-width:520px;margin-bottom:18px;font-size:15px}
+.checks{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:12px;margin-top:28px;font-size:13px;font-weight:600;
+  color:var(--ink-soft);
+}
+.checks div::before{content:"✦ ";color:var(--gold)}
+
+/* Quote section */
+.quote{text-align:center;max-width:860px;margin:auto}
+.quote mark{background:none;color:var(--gold);font-size:11.5px;text-transform:uppercase;letter-spacing:.18em;font-weight:700}
+.quote h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(36px,5vw,60px);font-weight:600;line-height:1.14;
+  margin:18px 0;color:var(--ink);
+}
+.quote p,.newsletter p{color:var(--muted);font-size:14px}
+
+/* Newsletter */
+.newsletter{
+  background:var(--ink);color:#fff;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:30px;border-radius:28px;margin:0 6% 100px;padding:60px 7%;
+}
+.newsletter h2{font-size:40px;color:#fff}
+.newsletter p{color:rgba(255,255,255,.65);margin-top:8px}
+.form{display:flex;border-bottom:1px solid rgba(255,255,255,.3);min-width:340px}
+.form input{
+  border:0;outline:0;background:transparent;
+  padding:13px 5px;width:100%;color:#fff;font-family:inherit;font-size:14px;
+}
+.form input::placeholder{color:rgba(255,255,255,.45)}
+.form button{background:transparent;font-weight:700;color:var(--gold-light);font-size:14px;letter-spacing:.05em}
+
+/* Footer */
+footer{
+  padding:50px 6%;
+  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;
+  align-items:center;gap:25px;
+  font-size:13px;color:var(--muted);
+  background:var(--warm-white);
+}
+.footer-logo{height:34px;width:auto}
+footer div{line-height:1.8}
+
+/* Cart panel */
+.cart-panel{
+  position:fixed;right:-430px;top:0;width:min(400px,100%);height:100vh;
+  background:var(--warm-white);z-index:50;
+  box-shadow:-20px 0 60px rgba(0,0,0,.12);
+  transition:.38s cubic-bezier(.4,0,.2,1);padding:28px;display:flex;flex-direction:column;
+}
+.cart-panel.open{right:0}
+.cart-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}
+.cart-top h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:30px;font-weight:600;color:var(--ink);
+}
+.close{background:transparent;font-size:26px;color:var(--muted);transition:color .2s}
+.close:hover{color:var(--gold)}
+.cart-items{flex:1;overflow:auto;padding:20px 0}
+.cart-item{display:grid;grid-template-columns:68px 1fr auto;gap:13px;align-items:center;margin-bottom:20px}
+.cart-item img{width:68px;height:68px;border-radius:14px;object-fit:cover;border:1px solid var(--line)}
+.cart-item h4{font-size:13.5px;font-weight:600}
+.cart-item p{font-size:12px;color:var(--muted)}
+.remove{background:none;color:#a15f57;font-size:11px;font-weight:600;transition:color .2s}
+.remove:hover{color:#c0392b}
+.cart-bottom{border-top:1px solid var(--line);padding-top:18px}
+.total{display:flex;justify-content:space-between;font-weight:700;margin-bottom:16px;font-size:15px}
+.checkout{
+  width:100%;padding:15px;background:var(--gold);color:#fff;
+  border-radius:999px;font-weight:700;font-size:14px;
+  transition:.25s;box-shadow:var(--shadow-gold);
+}
+.checkout:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+/* Overlay */
+.overlay{position:fixed;inset:0;background:rgba(18,14,10,.35);z-index:40;opacity:0;pointer-events:none;transition:.3s}
+.overlay.show{opacity:1;pointer-events:auto}
+
+/* ─── Reviews Section ─── */
+.reviews-section{background:var(--warm-white);border-radius:32px;margin:40px 6%;padding:80px 7%;border:1px solid var(--line)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:38px}
+.review-card{
+  background:var(--cream);padding:28px;border-radius:20px;
+  border:1px solid var(--line);display:flex;flex-direction:column;gap:14px;
+  transition:.28s ease;
+}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(184,136,46,.12);border-color:rgba(184,136,46,.25)}
+.stars{color:var(--gold);font-size:15px;letter-spacing:3px}
+.review-comment{font-size:14px;color:var(--ink-soft);line-height:1.6;font-style:italic}
+.review-meta{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}
+.review-author{font-weight:700;color:var(--ink)}
+
+/* ─── Product Modal ─── */
+.modal{
+  position:fixed;inset:0;
+  background:rgba(18,14,10,.55);
+  backdrop-filter:blur(10px);
+  z-index:100;opacity:0;pointer-events:none;
+  transition:opacity .3s ease;
+  display:grid;place-items:center;padding:20px;
+}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-content{
+  background:var(--warm-white);width:min(860px,100%);
+  max-height:90vh;border-radius:28px;overflow-y:auto;
+  position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+  animation:modalSlide .38s cubic-bezier(.16,1,.3,1);
+}
+@keyframes modalSlide{from{transform:translateY(22px) scale(.97)}to{transform:translateY(0) scale(1)}}
+.modal-close{
+  position:absolute;top:20px;right:22px;width:38px;height:38px;
+  border-radius:50%;background:var(--sand);font-size:22px;
+  color:var(--ink);z-index:10;display:grid;place-items:center;transition:.2s;
+}
+.modal-close:hover{background:var(--gold);color:#fff}
+.modal-grid{display:grid;grid-template-columns:1.05fr .95fr}
+.modal-gallery{height:100%;min-height:430px;background:var(--gold-pale);position:relative}
+.modal-gallery img{width:100%;height:100%;object-fit:cover}
+.modal-details{padding:42px 38px;display:flex;flex-direction:column;gap:20px}
+.modal-badge{
+  align-self:flex-start;background:var(--gold);color:#fff;
+  font-size:10px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.12em;padding:5px 13px;border-radius:999px;
+}
+.modal-title{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:600;color:var(--ink)}
+.modal-rating-summary{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.modal-price{font-size:26px;font-weight:700;color:var(--gold)}
+.modal-desc{font-size:14px;color:var(--muted);line-height:1.65;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
+.modal-specs{display:flex;gap:22px;font-size:13px}
+.modal-specs span{color:var(--muted)}
+.qty-picker{display:flex;align-items:center;gap:16px}
+.qty-btn{
+  width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);
+  background:var(--sand);font-size:16px;font-weight:700;
+  display:grid;place-items:center;transition:.2s;
+}
+.qty-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.qty-val{font-weight:700;font-size:16px;min-width:22px;text-align:center}
+.btn-add-modal{
+  width:100%;padding:16px;background:var(--gold);color:#fff;
+  font-size:14px;font-weight:700;border-radius:999px;
+  transition:.25s;box-shadow:var(--shadow-gold);letter-spacing:.03em;
+}
+.btn-add-modal:hover{background:var(--gold-light);transform:translateY(-2px)}
+
+/* Modal reviews */
+.modal-reviews-block{margin-top:25px;border-top:1px solid var(--line);padding-top:25px}
+.modal-reviews-block h4{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600;margin-bottom:15px;color:var(--ink)}
+.review-form{display:flex;flex-direction:column;gap:12px;background:var(--sand);padding:20px;border-radius:16px;margin-bottom:20px}
+.review-form input,.review-form textarea,.review-form select{
+  border:1px solid var(--line);border-radius:10px;padding:11px 14px;
+  font-family:inherit;font-size:13px;outline:none;background:var(--warm-white);
+  color:var(--ink);transition:border-color .2s;
+}
+.review-form input:focus,.review-form textarea:focus{border-color:var(--gold)}
+.review-form textarea{resize:vertical;min-height:72px}
+.review-form button{
+  background:var(--ink);color:#fff;border-radius:999px;
+  padding:10px 20px;font-size:12.5px;font-weight:700;align-self:flex-end;transition:.2s;
+}
+.review-form button:hover{background:var(--gold)}
+
+/* ─── Responsive ─── */
+@media(max-width:1100px){
+  .products{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:900px){
+  .navlinks{display:none}
+  .hero,.story{grid-template-columns:1fr}
+  .hero{padding-top:50px}
+  .hero-art{height:440px}
+  .story{gap:38px}
+  .story-img{height:430px}
+  .newsletter{display:block}
+  .form{margin-top:22px}
+  .reviews-grid{grid-template-columns:1fr 1fr}
+  .modal-grid{grid-template-columns:1fr}
+  .modal-gallery{height:290px;min-height:290px}
+  .modal-details{padding:26px 22px}
+}
+@media(max-width:600px){
+  .products{grid-template-columns:repeat(2,1fr)}
+  .reviews-section{padding:48px 5%;margin:20px 5%}
+  .reviews-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center;gap:14px}
+}
