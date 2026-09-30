@@ -4,20 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LUNA — Handmade Bags Collection</title>
+  <meta name="description" content="Explore LUNA's small-batch collection of hand-stitched leather totes, suede crossbodies, and structured shoulder bags.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* ── Bags-page specific styles ── */
     .bags-hero {
-      min-height: 480px;
-      border-radius: 28px;
+      min-height: 500px;
+      border-radius: 32px;
       margin: 20px 6%;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
-      padding: 60px 8%;
+      padding: 65px 8%;
       color: #fff;
     }
     .bags-hero-img {
@@ -26,131 +28,180 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.65);
+      filter: brightness(.55);
+    }
+    /* Gold tint overlay on hero */
+    .bags-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(184,136,46,.35) 0%, transparent 60%);
+      pointer-events: none;
     }
     .bags-hero-content {
       position: relative;
       z-index: 2;
-      max-width: 580px;
+      max-width: 600px;
     }
+    .bags-hero .eyebrow { color: var(--gold-light); }
     .bags-hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 5vw, 68px);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(44px, 5.5vw, 72px);
       line-height: 1.05;
-      font-weight: 500;
-      margin: 15px 0;
+      font-weight: 600;
+      margin: 14px 0;
+      color: #fff;
     }
     .bags-hero p {
-      font-size: 16px;
-      line-height: 1.6;
-      opacity: 0.9;
-      margin-bottom: 25px;
+      font-size: 15.5px;
+      line-height: 1.65;
+      opacity: .88;
+      margin-bottom: 28px;
     }
+
+    /* Filter bar */
     .filter-bar {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
     .filter-btn {
-      padding: 10px 22px;
+      padding: 10px 24px;
       border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--line);
+      background: var(--warm-white);
+      border: 1.5px solid var(--line);
       font-size: 13px;
       font-weight: 600;
-      color: var(--ink);
-      transition: all 0.25s ease;
+      color: var(--ink-soft);
+      transition: all .25s ease;
+      letter-spacing: .02em;
     }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--ink);
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gold);
       color: #fff;
-      border-color: var(--ink);
+      border-color: var(--gold);
+      box-shadow: 0 6px 20px rgba(184,136,46,.28);
     }
+
+    /* Custom bespoke section */
     .custom-builder {
-      background: var(--sage);
-      border-radius: 28px;
+      background: var(--gold-pale);
+      border-radius: 32px;
       margin: 60px 6%;
-      padding: 60px 8%;
+      padding: 65px 8%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: 55px;
       align-items: center;
+      border: 1px solid rgba(184,136,46,.2);
     }
+    .custom-builder .eyebrow { margin-bottom: 10px; }
     .custom-builder h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 44px;
-      font-weight: 500;
-      line-height: 1.1;
-      margin-bottom: 15px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 46px;
+      font-weight: 600;
+      line-height: 1.08;
+      margin-bottom: 14px;
+      color: var(--ink);
     }
     .custom-builder p {
-      color: #5f6259;
+      color: var(--ink-soft);
       font-size: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      line-height: 1.65;
     }
+    .custom-checks {
+      display: grid;
+      gap: 10px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+    .custom-checks div::before { content: "✦ "; color: var(--gold); }
+
     .custom-form {
-      background: #fff;
-      padding: 30px;
-      border-radius: 20px;
+      background: var(--warm-white);
+      padding: 34px;
+      border-radius: 24px;
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
       gap: 14px;
-    }
-    .custom-form input, .custom-form textarea {
       border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 12px 16px;
+    }
+    .custom-form h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .custom-form input,
+    .custom-form textarea {
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 13px 16px;
       font-family: inherit;
       font-size: 14px;
       outline: none;
+      color: var(--ink);
+      background: var(--cream);
+      transition: border-color .2s;
     }
-    .custom-form textarea {
-      resize: vertical;
-      min-height: 90px;
-    }
+    .custom-form input:focus,
+    .custom-form textarea:focus { border-color: var(--gold); }
+    .custom-form textarea { resize: vertical; min-height: 95px; }
     .custom-form button {
-      background: var(--ink);
+      background: var(--gold);
       color: #fff;
       padding: 14px;
       border-radius: 999px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 14px;
-      transition: background 0.25s;
+      letter-spacing: .03em;
+      transition: .25s;
+      box-shadow: var(--shadow-gold);
     }
     .custom-form button:hover {
-      background: var(--accent);
+      background: var(--gold-light);
+      transform: translateY(-2px);
     }
-    @media(max-width: 900px) {
-      .custom-builder { grid-template-columns: 1fr; gap: 30px; padding: 40px 6%; }
+
+    @media(max-width:900px){
+      .custom-builder { grid-template-columns: 1fr; gap: 32px; padding: 44px 6%; }
     }
   </style>
 </head>
 <body>
-  <div class="announcement">Handcrafted Leather & Linen Bags · Small Batch Release</div>
+  <div class="announcement">Handcrafted Leather &amp; Linen Bags · Small Batch Release</div>
 
   <nav>
-    <a class="logo" href="/">LUNA</a>
+    <a href="/" aria-label="LUNA Home">
+      <img class="logo-img" src="luna-horizontal-gold.png" alt="LUNA">
+    </a>
     <div class="navlinks">
       <a href="/">Home</a>
-      <a href="/bags" style="font-weight:700;color:var(--accent);">Handmade Bags GB</a>
+      <a href="/bags" class="active">Handmade Bags</a>
       <a href="/#story">Our Story</a>
     </div>
     <button class="cart-btn" id="cartButton">Bag <span class="count" id="count">0</span></button>
   </nav>
 
   <main>
+    <!-- Hero -->
     <section class="bags-hero">
       <img src="bags_hero.png" class="bags-hero-img" alt="LUNA Handmade Bags Collection">
       <div class="bags-hero-content">
-        <div class="eyebrow" style="color:var(--rose)">Artisan Leatherwork</div>
-        <h1>Carried with care. Built for life.</h1>
+        <div class="eyebrow">Artisan Leatherwork</div>
+        <h1>Carried with care.<br>Built for life.</h1>
         <p>Explore our small-batch collection of hand-stitched leather totes, suede crossbodies, and structured shoulder bags.</p>
-        <a class="btn btn-dark" href="#bags-catalog" style="background:#fff;color:var(--ink);">Browse Collection ↓</a>
+        <a class="btn btn-gold" href="#bags-catalog" style="display:inline-block">Browse Collection ↓</a>
       </div>
     </section>
 
+    <!-- Catalog -->
     <section id="bags-catalog">
       <div class="section-head">
         <h2>Handmade Bags</h2>
@@ -170,20 +221,20 @@
       </div>
     </section>
 
-    <!-- Custom Bespoke Bag Inquiry -->
+    <!-- Custom Order -->
     <section class="custom-builder">
       <div>
         <div class="eyebrow">Custom Leathercraft</div>
         <h2>Have a bag idea in mind?</h2>
         <p>We craft bespoke custom leather bags tailored to your exact measurements, color preferences, and pocket requirements.</p>
-        <div style="font-size:14px;color:#5f6259;display:grid;gap:8px;">
-          <div>✓ Choose your leather shade & texture</div>
-          <div>✓ Custom strap length & brass hardware</div>
-          <div>✓ Monogram initial engraving option</div>
+        <div class="custom-checks">
+          <div>Choose your leather shade &amp; texture</div>
+          <div>Custom strap length &amp; brass hardware</div>
+          <div>Monogram initial engraving option</div>
         </div>
       </div>
       <form class="custom-form" id="customBagForm">
-        <h3 style="font-family:'Playfair Display',serif;font-size:22px;">Request Custom Bag</h3>
+        <h3>Request Custom Bag</h3>
         <input type="text" id="custName" placeholder="Your Name" required>
         <input type="email" id="custEmail" placeholder="Your Email Address" required>
         <textarea id="custDetails" placeholder="Tell us about your dream bag (dimensions, color, material...)" required></textarea>
@@ -193,7 +244,7 @@
   </main>
 
   <footer>
-    <strong>LUNA</strong>
+    <img class="footer-logo" src="luna-horizontal-gold.png" alt="LUNA">
     <div>Handmade with intention · © 2026 LUNA Bags</div>
     <div>Instagram · TikTok · Contact</div>
   </footer>
